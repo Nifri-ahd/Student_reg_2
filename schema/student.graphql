@@ -1,0 +1,10 @@
+input StudentCreateInput {
+  id: ID
+  fullName: String!
+  lastName: String!
+  email: String!
+  password: String!
+  age: String!
+  country: String!
+  isActive: Boolean
+}

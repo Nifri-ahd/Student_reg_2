@@ -1,0 +1,22 @@
+# import * from 'schema/schema.graphql'
+# import * from './schema/student.graphql'
+
+
+
+   
+type Mutation {
+  
+  createStudent(data: StudentCreateInput!): student!
+  updateStudent(data: StudentUpdateInput!, where: StudentWhereUniqueInput!): student
+  deleteStudent(where: StudentWhereUniqueInput!): student
+ 
+}
+
+
+
+type Query {
+  student(where: StudentWhereInput, orderBy: StudentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [student]!
+  student(where: StudentWhereUniqueInput!): student
+  login(where:UserLogin): UserLogin!
+
+}  

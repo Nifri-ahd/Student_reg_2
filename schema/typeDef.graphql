@@ -1,0 +1,34 @@
+const { gql } = require('apollo-server');
+
+module.exports = gql`
+  type Student {
+    id: ID!
+    name: String!
+    email: String!
+    age: String!
+    country: String!
+    username: String!
+    password: String!
+  
+  }
+  input StudentData {
+    name: String!
+    username: String!
+    age: String!
+    country: String!
+    email: String!
+    password: String!
+
+  }
+  type Query {
+    getStudent(username: String!): Student!
+    getAllStudent: [User]!
+    files: [String]
+  }
+
+  type Mutation {
+    register(studentData: userData!): Student!
+    login(username: String!, password: String!): Student!
+    uploadFile(file: Upload!): Boolean
+  }
+`;
